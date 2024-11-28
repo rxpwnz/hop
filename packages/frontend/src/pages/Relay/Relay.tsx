@@ -286,19 +286,19 @@ export const Relay: FC = () => {
           </Button>
         </Box>
       </form>
-      <Box className={styles.notice}>
+      <Box className={styles.notice} mb={2}>
         <Alert severity="error">{error}</Alert>
       </Box>
-      <Box className={styles.notice}>
+      <Box className={styles.notice} mb={2}>
         <Alert severity="success">{success}</Alert>
       </Box>
       {commitTxHashForTransferId && (
-        <Box className={styles.notice}>
+        <Box className={styles.notice} mb={2}>
           <Alert severity="info">Found commit tx hash: {commitTxHashForTransferId}</Alert>
         </Box>
       )}
       {commitInfoMsg && (
-        <Box className={styles.notice}>
+        <Box className={styles.notice} mb={2}>
           <Alert severity="info">{commitInfoMsg}</Alert>
         </Box>
       )}

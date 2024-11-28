@@ -11,7 +11,7 @@ async function main () {
     if (page === 2) {
       break
     }
-    const url0 = `https://explorer-api.hop.exchange/v1/transfers?page=${page}&bonded=pending`
+    const url0 = `https://explorer-api.hop.exchange/v1/transfers?page=${page}&bonded=pending&rate_limit_token=${rateLimitToken}`
     const response0 = await fetch(url0)
     const json0 = await response0.json()
     const transferIds = json0.data.map(transfer => transfer.transferId)
