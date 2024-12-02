@@ -16,7 +16,6 @@ import SelectOption from '#components/selects/SelectOption.js'
 import { l2Networks, allNetworks } from '#config/networks.js'
 import Network from '#models/Network.js'
 import { findNetworkBySlug, findMatchingBridge } from '#utils/index.js'
-import { wait } from '#utils/wait.js'
 
 const useStyles = makeStyles((theme: any) => ({
   root: {
@@ -151,6 +150,9 @@ export const CommitTransfers: FC = () => {
       <Box className={styles.header}>
         <Typography variant="h4">Commit Transfers</Typography>
       </Box>
+      <Box mb={4} justifyItems="center" style={{ opacity: 0.7 }}>
+        <Typography variant="body1">This is to commit the transfer root hash which is necessary for manually withdrawals.</Typography>
+      </Box>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Box>
 
@@ -218,7 +220,7 @@ export const CommitTransfers: FC = () => {
         </Box>
       )}
       <Box mt={10} display="flex" justifyContent="center" style={{ opacity: 0.7 }}>
-        <Typography variant="body1">After the transfers have been committed, the transfer can be relayed using the <Link href="#/relay">Relay page</Link>.</Typography>
+        <Typography variant="body1">After the transfer root has been committed, the transfer can be relayed using the <Link href="#/relay">Relay page</Link>.</Typography>
       </Box>
     </Box>
   )
